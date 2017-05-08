@@ -48,7 +48,9 @@ public class TuringMachine {
     public Tape run(Tape<Integer> tape) {
         String currentState = initState;
 
+        int count = 0;
         while(!Objects.equals(currentState, acceptState)) {
+            if (++count % 1000 == 0) { System.out.println(currentState); count = 0; }
             HashMap<Integer, Transition> cards = states.get(currentState);
             Transition card = cards.get(tape.read());
             tape.write(card.write);

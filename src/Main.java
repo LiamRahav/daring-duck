@@ -429,7 +429,7 @@ public class Main {
         // endregion
 
         Tape<Integer> tape = new Tape<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             tape.write(1);
             tape.moveRight();
         }
